@@ -24,6 +24,20 @@ class WizardTest {
     }
 
     @Test
+    fun restoreMana_amountAddedExceedOneHundred_manaSetToHundred() {
+        evilWizard.restoreMana(80)
+
+        assertEquals(100, evilWizard.mana)
+    }
+
+    @Test
+    fun restoreMana_amountAddedDoesNotExceedOneHundred_manaIncreasesCorrectly () {
+        evilWizard.restoreMana(40)
+
+        assertEquals(70, evilWizard.mana)
+    }
+
+    @Test
     fun castSpell_explosion_unsuccessful() {
         evilWizard.mana = 5 // Evil Wizard does not have enough mana to cast "Explosion"
         val damageDealt = evilWizard.castSpell("Explosion")

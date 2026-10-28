@@ -9,15 +9,22 @@ class Wizard(val name: String, var mana: Int, var spellPower: Int) {
                     return spellPower * 3
                 } else return 0 // not enough mana
             }
+
             "Frostbite" -> {
                 if (mana >= 5) {
                     mana -= 5
                     return spellPower * 2
                 } else return 0 // not enough mana
             }
+
             else -> {
                 return 0 // invalid spell
+
+
             }
         }
+    }
+
+    fun restoreMana() {
     }
 }
