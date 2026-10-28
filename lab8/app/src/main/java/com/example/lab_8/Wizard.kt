@@ -1,4 +1,9 @@
 package com.example.lab_8
+
+import kotlin.collections.minusAssign
+import kotlin.collections.plusAssign
+import kotlin.compareTo
+
 // Wizard class for managing mana and spell power.
 class Wizard(val name: String, var mana: Int, var spellPower: Int) {
     fun castSpell(spell: String): Int {
@@ -28,7 +33,12 @@ class Wizard(val name: String, var mana: Int, var spellPower: Int) {
     fun restoreMana(amount: Int) {
         mana = minOf(100, mana + amount)
     }
+
+    fun train() {
+        if (mana >= 5) {
+            spellPower += 1
+            mana -= 5
+        }
+    }
 }
 
-fun train(){
-}
